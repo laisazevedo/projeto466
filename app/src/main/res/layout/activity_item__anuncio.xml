@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".item__anuncioActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="150"
+        app:srcCompat="@drawable/images" />
+
+    <TextView
+        android:id="@+id/txt_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Abajur  de Luxo"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_descricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usado apenas 7 vezes"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_preco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="R$ 56"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="01 maio 16:20"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_bairro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Maravilha , Altos_PI"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="20"
+        android:textStyle="bold" />
+
+</LinearLayout>
