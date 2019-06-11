@@ -1,5 +1,6 @@
 package com.example.projeto466.Adapter;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget. Snackbar;
 import android.support.v7.widget.RecyclerView;
@@ -8,11 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.List;
+
+import com.example.projeto466.AnuncioDetalhesActivity;
 import com.example.projeto466.R;
 import com.example.projeto466.modelos.Anuncio;
 
 
 public class AnuncioAdapter extends RecyclerView.Adapter<AnuncioAdapter.AnuncioViewHolder>{
+    TextView txt_bairro, txt_data, txt_descricao, txt_titulo, txt_preco;
+
+
+
     private Context context;
     private List<Anuncio> anuncios;
 
@@ -48,7 +55,7 @@ public class AnuncioAdapter extends RecyclerView.Adapter<AnuncioAdapter.AnuncioV
         return 0;
     }
 
-    class AnuncioViewHolder extends RecyclerView.ViewHolder {
+    class AnuncioViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView txt_titulo;
         TextView text_bairro;
         TextView text_data;
@@ -60,19 +67,32 @@ public class AnuncioAdapter extends RecyclerView.Adapter<AnuncioAdapter.AnuncioV
 
             // Binding
             txt_titulo = itemView.findViewById(R.id.txt_titulo);
-            text_bairro= itemView.findViewById(R.id.txt_bairro);
-            text_data = itemView.findViewById(R.id.txt_data);
-            text_preco = itemView.findViewById(R.id.txt_preco);
-            text_descricao= itemView.findViewById(R.id.txt_descricao);
+            txt_bairro= itemView.findViewById(R.id.txt_bairro);
+            txt_data = itemView.findViewById(R.id.txt_data);
+            txt_preco = itemView.findViewById(R.id.txt_preco);
+            txt_descricao= itemView.findViewById(R.id.txt_descricao);
 
-            itemView.setOnClickListener(new View.OnClickListener(){
+           itemView.setOnClickListener(this);
 
-                public void onClick(View v){
-                   Snackbar.make(v, "Você selecinou esse item",Snackbar.LENGTH_LONG).show();
+
                 }
-            });
+
+
+        @Override
+        public void onClick(View v) {
+            int posicao=getAdapterPosition();
+            Anuncio anuncio =anuncios.get(posicao);
+            Intent intent = new Intent(context, AnuncioDetalhesActivity.class);
+
+            context.startActivity(intent);
+            intent.putExtra("titulo","");
+            intent.putExtra("bairro","");
+            intent.putExtra("descricao","");
+            intent.putExtra("data","");
+            intent.putExtra("preco","86");
 
         }
     }
-}
+    }
+
 
